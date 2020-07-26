@@ -6,10 +6,10 @@ from keras.models import model_from_json
 
 face_cascade= cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
-model = model_from_json(open("model.json",  "r",errors='ignore').read())
-model.load_weights('model_weights.h5')
+model = model_from_json(open("fer_model.json",  "r",errors='ignore').read())
+model.load_weights('fer_model_weights.h5')
 
 emotions = {0: "Angry", 1: "Disgust", 2: "Fear", 3: "Happy", 4: "Sad", 5: "Surprise", 6: "Neutral"}
 
